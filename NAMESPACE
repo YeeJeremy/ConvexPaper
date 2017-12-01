@@ -1,0 +1,5 @@
+useDynLib(ConvexPaper)
+importFrom(Rcpp, evalCpp)
+importFrom("stats", "qnorm", "sd")
+importFrom("rflann", "FastKDNeighbour")
+exportPattern("^[[:alpha:]]+")

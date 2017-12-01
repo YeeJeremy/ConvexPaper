@@ -1,0 +1,17 @@
+Package: ConvexPaper
+Type: Package
+Title: Convex Paper
+Version: 1.0
+Date: 2017-12-01
+Author: Jeremy Yee
+Maintainer: Jeremy Yee <jeremyyee@outlook.com.au>
+Description: R package to demonstrate some methods for papers I wrote.
+URL: https://github.com/YeeJeremy/ConvexPaper
+License: GPL
+Depends: rflann (>= 1.4)
+Imports: Rcpp (>= 0.11.6)
+LinkingTo: Rcpp, RcppArmadillo, rflann (>= 1.4)
+Suggests: R.rsp
+VignetteBuilder: R.rsp
+NeedsCompilation: yes
+BugReports: https://github.com/YeeJeremy/ConvexPaper/issues
