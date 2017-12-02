@@ -48,13 +48,13 @@ arma::mat ExpectMatUpper(const arma::vec& grid,
 
 // Bellman recursion using the conditional expectation matrices
 //[[Rcpp::export]]
-Rcpp::List FastBellmanUpper(const double& strike,
-                            const double& discount,
-                            const std::size_t& n_dec,
-                            const arma::vec& grid,
-                            const double& lipz,
-                            const arma::vec& disturb,
-                            const arma::vec& weight) {
+Rcpp::List BermudaPutUpper(const double& strike,
+                           const double& discount,
+                           const std::size_t& n_dec,
+                           const arma::vec& grid,
+                           const double& lipz,
+                           const arma::vec& disturb,
+                           const arma::vec& weight) {
   
   // Parameters
   const std::size_t n_grid = grid.n_elem;

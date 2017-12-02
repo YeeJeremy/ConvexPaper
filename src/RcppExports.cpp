@@ -6,25 +6,9 @@
 
 using namespace Rcpp;
 
-// FastBellmanTangent
-Rcpp::List FastBellmanTangent(const double& strike, const double& discount, const std::size_t& n_dec, const arma::vec& grid, const arma::vec& disturb, const arma::vec& weight);
-RcppExport SEXP _ConvexPaper_FastBellmanTangent(SEXP strikeSEXP, SEXP discountSEXP, SEXP n_decSEXP, SEXP gridSEXP, SEXP disturbSEXP, SEXP weightSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const double& >::type strike(strikeSEXP);
-    Rcpp::traits::input_parameter< const double& >::type discount(discountSEXP);
-    Rcpp::traits::input_parameter< const std::size_t& >::type n_dec(n_decSEXP);
-    Rcpp::traits::input_parameter< const arma::vec& >::type grid(gridSEXP);
-    Rcpp::traits::input_parameter< const arma::vec& >::type disturb(disturbSEXP);
-    Rcpp::traits::input_parameter< const arma::vec& >::type weight(weightSEXP);
-    rcpp_result_gen = Rcpp::wrap(FastBellmanTangent(strike, discount, n_dec, grid, disturb, weight));
-    return rcpp_result_gen;
-END_RCPP
-}
-// FastBellmanUpper
-Rcpp::List FastBellmanUpper(const double& strike, const double& discount, const std::size_t& n_dec, const arma::vec& grid, const double& lipz, const arma::vec& disturb, const arma::vec& weight);
-RcppExport SEXP _ConvexPaper_FastBellmanUpper(SEXP strikeSEXP, SEXP discountSEXP, SEXP n_decSEXP, SEXP gridSEXP, SEXP lipzSEXP, SEXP disturbSEXP, SEXP weightSEXP) {
+// BermudaPutUpper
+Rcpp::List BermudaPutUpper(const double& strike, const double& discount, const std::size_t& n_dec, const arma::vec& grid, const double& lipz, const arma::vec& disturb, const arma::vec& weight);
+RcppExport SEXP _ConvexPaper_BermudaPutUpper(SEXP strikeSEXP, SEXP discountSEXP, SEXP n_decSEXP, SEXP gridSEXP, SEXP lipzSEXP, SEXP disturbSEXP, SEXP weightSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
@@ -35,14 +19,30 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< const double& >::type lipz(lipzSEXP);
     Rcpp::traits::input_parameter< const arma::vec& >::type disturb(disturbSEXP);
     Rcpp::traits::input_parameter< const arma::vec& >::type weight(weightSEXP);
-    rcpp_result_gen = Rcpp::wrap(FastBellmanUpper(strike, discount, n_dec, grid, lipz, disturb, weight));
+    rcpp_result_gen = Rcpp::wrap(BermudaPutUpper(strike, discount, n_dec, grid, lipz, disturb, weight));
+    return rcpp_result_gen;
+END_RCPP
+}
+// FastBermudaPutTangent
+Rcpp::List FastBermudaPutTangent(const double& strike, const double& discount, const std::size_t& n_dec, const arma::vec& grid, const arma::vec& disturb, const arma::vec& weight);
+RcppExport SEXP _ConvexPaper_FastBermudaPutTangent(SEXP strikeSEXP, SEXP discountSEXP, SEXP n_decSEXP, SEXP gridSEXP, SEXP disturbSEXP, SEXP weightSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const double& >::type strike(strikeSEXP);
+    Rcpp::traits::input_parameter< const double& >::type discount(discountSEXP);
+    Rcpp::traits::input_parameter< const std::size_t& >::type n_dec(n_decSEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type grid(gridSEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type disturb(disturbSEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type weight(weightSEXP);
+    rcpp_result_gen = Rcpp::wrap(FastBermudaPutTangent(strike, discount, n_dec, grid, disturb, weight));
     return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_ConvexPaper_FastBellmanTangent", (DL_FUNC) &_ConvexPaper_FastBellmanTangent, 6},
-    {"_ConvexPaper_FastBellmanUpper", (DL_FUNC) &_ConvexPaper_FastBellmanUpper, 7},
+    {"_ConvexPaper_BermudaPutUpper", (DL_FUNC) &_ConvexPaper_BermudaPutUpper, 7},
+    {"_ConvexPaper_FastBermudaPutTangent", (DL_FUNC) &_ConvexPaper_FastBermudaPutTangent, 6},
     {NULL, NULL, 0}
 };
 

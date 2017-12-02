@@ -35,12 +35,12 @@ arma::cube ExpectMatTangent(const arma::vec& grid,
 
 // Bellman recursion using the conditional expectation matrices
 //[[Rcpp::export]]
-Rcpp::List FastBellmanTangent(const double& strike,
-                              const double& discount,
-                              const std::size_t& n_dec,
-                              const arma::vec& grid,
-                              const arma::vec& disturb,
-                              const arma::vec& weight) {
+Rcpp::List FastBermudaPutTangent(const double& strike,
+                                 const double& discount,
+                                 const std::size_t& n_dec,
+                                 const arma::vec& grid,
+                                 const arma::vec& disturb,
+                                 const arma::vec& weight) {
   // Parameters
   const std::size_t n_grid = grid.n_elem;
   const std::size_t n_disturb = disturb.n_elem;
