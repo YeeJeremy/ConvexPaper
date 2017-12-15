@@ -14,7 +14,8 @@ n_dec <- 51
 strike <- 40
 discount <- exp(-rate * step)
 ## Grid
-grid <- seq(30, 60, length = 301)
+n_grid <- 301
+grid <- seq(30, 60, length = n_grid)
 ## Disturbances
 nD <- 1000  ## size of sampling
 dist <- rep(NA, nD)
@@ -58,7 +59,7 @@ lower <- rep(NA, length(ggIndex))
 upper <- lower
 gap <- lower
 ## Value functions
-value1 <- rowSums(bellman1$value[,,1] * c(rep(1, 301), grid))
+value1 <- rowSums(bellman1$value[,,1] * c(rep(1, n_grid), grid))
 value2 <- bellman2$value[,1]
 for (gg in 1:length(ggIndex)) {
     host <- which(grid == ggIndex[gg])
