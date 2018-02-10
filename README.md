@@ -2,7 +2,7 @@
 
 R package to demonstrate code for papers I'm working on.
 
-# Convex and Lipschitz function approximations for Markov decision processes
+# Convex function approximations for Markov decision processes
 
 ~~~
 library(ConvexPaper)
