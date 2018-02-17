@@ -9,3 +9,11 @@ FastBermudaPutTangent <- function(strike, discount, n_dec, grid, disturb, weight
     .Call('_ConvexPaper_FastBermudaPutTangent', PACKAGE = 'ConvexPaper', strike, discount, n_dec, grid, disturb, weight)
 }
 
+FastInfBermudaPutTangent <- function(strike, discount, grid, disturb, weight, max_iter, error) {
+    .Call('_ConvexPaper_FastInfBermudaPutTangent', PACKAGE = 'ConvexPaper', strike, discount, grid, disturb, weight, max_iter, error)
+}
+
+InfBermudaPutUpper <- function(strike, discount, grid, lipz, disturb, weight, max_iter, error) {
+    .Call('_ConvexPaper_InfBermudaPutUpper', PACKAGE = 'ConvexPaper', strike, discount, grid, lipz, disturb, weight, max_iter, error)
+}
+

@@ -39,10 +39,47 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// FastInfBermudaPutTangent
+Rcpp::List FastInfBermudaPutTangent(const double& strike, const double& discount, const arma::vec& grid, const arma::vec& disturb, const arma::vec& weight, const std::size_t& max_iter, const double& error);
+RcppExport SEXP _ConvexPaper_FastInfBermudaPutTangent(SEXP strikeSEXP, SEXP discountSEXP, SEXP gridSEXP, SEXP disturbSEXP, SEXP weightSEXP, SEXP max_iterSEXP, SEXP errorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const double& >::type strike(strikeSEXP);
+    Rcpp::traits::input_parameter< const double& >::type discount(discountSEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type grid(gridSEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type disturb(disturbSEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type weight(weightSEXP);
+    Rcpp::traits::input_parameter< const std::size_t& >::type max_iter(max_iterSEXP);
+    Rcpp::traits::input_parameter< const double& >::type error(errorSEXP);
+    rcpp_result_gen = Rcpp::wrap(FastInfBermudaPutTangent(strike, discount, grid, disturb, weight, max_iter, error));
+    return rcpp_result_gen;
+END_RCPP
+}
+// InfBermudaPutUpper
+Rcpp::List InfBermudaPutUpper(const double& strike, const double& discount, const arma::vec& grid, const double& lipz, const arma::vec& disturb, const arma::vec& weight, const std::size_t& max_iter, const double& error);
+RcppExport SEXP _ConvexPaper_InfBermudaPutUpper(SEXP strikeSEXP, SEXP discountSEXP, SEXP gridSEXP, SEXP lipzSEXP, SEXP disturbSEXP, SEXP weightSEXP, SEXP max_iterSEXP, SEXP errorSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const double& >::type strike(strikeSEXP);
+    Rcpp::traits::input_parameter< const double& >::type discount(discountSEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type grid(gridSEXP);
+    Rcpp::traits::input_parameter< const double& >::type lipz(lipzSEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type disturb(disturbSEXP);
+    Rcpp::traits::input_parameter< const arma::vec& >::type weight(weightSEXP);
+    Rcpp::traits::input_parameter< const std::size_t& >::type max_iter(max_iterSEXP);
+    Rcpp::traits::input_parameter< const double& >::type error(errorSEXP);
+    rcpp_result_gen = Rcpp::wrap(InfBermudaPutUpper(strike, discount, grid, lipz, disturb, weight, max_iter, error));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_ConvexPaper_BermudaPutUpper", (DL_FUNC) &_ConvexPaper_BermudaPutUpper, 7},
     {"_ConvexPaper_FastBermudaPutTangent", (DL_FUNC) &_ConvexPaper_FastBermudaPutTangent, 6},
+    {"_ConvexPaper_FastInfBermudaPutTangent", (DL_FUNC) &_ConvexPaper_FastInfBermudaPutTangent, 7},
+    {"_ConvexPaper_InfBermudaPutUpper", (DL_FUNC) &_ConvexPaper_InfBermudaPutUpper, 8},
     {NULL, NULL, 0}
 };
 
