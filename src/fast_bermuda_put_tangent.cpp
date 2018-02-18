@@ -79,6 +79,12 @@ Rcpp::List FastBermudaPutTangent(const double& strike,
         value(gg, 1, tt) = -1.;
       }
     }
+    for (std::size_t gg = in_money; gg < n_grid; gg++) {
+      if (cont_value(gg) <= 0.) {
+        value(gg, 0, tt) = 0.;
+        value(gg, 1, tt) = 0.;
+      }
+    }
   }
   return Rcpp::List::create(Rcpp::Named("value") = value,
                             Rcpp::Named("expected") = cont);

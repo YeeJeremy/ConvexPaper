@@ -96,6 +96,11 @@ Rcpp::List InfBermudaPutUpper(const double& strike,
         value2(gg) = strike - grid(gg);
       }
     }
+    for (std::size_t gg = in_money; gg < n_grid; gg++) {
+      if (cont(gg) >= value2(in_money - 1)) {
+        value2(gg) = value2(in_money - 1);
+      }
+    }
     compare = arma::abs(value1 - value2);
     iter_error = compare.max();
     value1 = value2;

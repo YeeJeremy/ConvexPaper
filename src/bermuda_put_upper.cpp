@@ -90,6 +90,11 @@ Rcpp::List BermudaPutUpper(const double& strike,
         value(gg, tt) = strike - grid(gg);
       }
     }
+    for (std::size_t gg = in_money; gg < n_grid; gg++) {
+      if (cont(gg, tt) > value(in_money - 1, tt)) {
+        value(gg, tt) = value(in_money - 1, tt);
+      }
+    }
   }
   return Rcpp::List::create(Rcpp::Named("value") = value,
                             Rcpp::Named("expected") = cont);

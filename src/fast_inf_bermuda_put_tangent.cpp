@@ -85,6 +85,12 @@ Rcpp::List FastInfBermudaPutTangent(const double& strike,
         value2(gg, 1) = -1.;
       }
     }
+    for (std::size_t gg = in_money; gg < n_grid; gg++) {
+      if (cont_value(gg) <= 0.) {
+        value2(gg, 0) = 0.;
+        value2(gg, 1) = 0.;
+      }
+    }
     compare = arma::abs(value1 - value2);
     iter_error = compare.max();
     value1 = value2;
